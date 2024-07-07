@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'react-quill/dist/quill.bubble.css';
+
+
+@layer base {
+  :root {
+    /* Background and foreground colors */
+    --background: #ffffff; /* White background */
+    --foreground: #1c1c1c; /* Dark gray foreground */
+
+    /* Card background and foreground colors */
+    --card: #ffffff; /* White card background */
+    --card-foreground: #1c1c1c; /* Dark gray card foreground */
+
+    /* Popover background and foreground colors */
+    --popover: #ffffff; /* White popover background */
+    --popover-foreground: #1c1c1c; /* Dark gray popover foreground */
+
+    /* Primary color scheme */
+    --primary: #1a1a1a; /* Very dark gray primary color */
+    --primary-foreground: #f0f8ff; /* Alice blue primary foreground */
+
+    /* Secondary color scheme */
+    --secondary: #f0f0f0; /* Light gray secondary color */
+    --secondary-foreground: #1a1a1a; /* Very dark gray secondary foreground */
+
+    /* Muted color scheme */
+    --muted: #f0f0f0; /* Light gray muted color */
+    --muted-foreground: #6e6e6e; /* Medium gray muted foreground */
+
+    /* Accent color scheme */
+    --accent: #f0f0f0; /* Light gray accent color */
+    --accent-foreground: #1a1a1a; /* Very dark gray accent foreground */
+
+    /* Destructive color scheme (for errors, alerts, etc.) */
+    --destructive: #ff4d4d; /* Red destructive color */
+    --destructive-foreground: #f0f8ff; /* Alice blue destructive foreground */
+
+    /* Border and input colors */
+    --border: #d8d8d8; /* Light gray border */
+    --input: #d8d8d8; /* Light gray input background */
+    --ring: #1c1c1c; /* Dark gray ring (focus border) */
+
+    /* Border radius */
+    --radius: 0.5rem; /* 8px border radius */
+
+    /* Added text and soft text colors */
+    --text-color: #000000; /* Black text color */
+    --soft-text-color: #757575; /* Soft gray text color */
+  }
+
+  .dark {
+    /* Background and foreground colors for dark mode */
+    --background: #1c1c1c; /* Dark gray background */
+    --foreground: #f0f8ff; /* Alice blue foreground */
+
+    /* Card background and foreground colors for dark mode */
+    --card: #1c1c1c; /* Dark gray card background */
+    --card-foreground: #f0f8ff; /* Alice blue card foreground */
+
+    /* Popover background and foreground colors for dark mode */
+    --popover: #1c1c1c; /* Dark gray popover background */
+    --popover-foreground: #f0f8ff; /* Alice blue popover foreground */
+
+    /* Primary color scheme for dark mode */
+    --primary: #f0f8ff; /* Alice blue primary color */
+    --primary-foreground: #1a1a1a; /* Very dark gray primary foreground */
+
+    /* Secondary color scheme for dark mode */
+    --secondary: #2c2c2c; /* Darker gray secondary color */
+    --secondary-foreground: #f0f8ff; /* Alice blue secondary foreground */
+
+    /* Muted color scheme for dark mode */
+    --muted: #2c2c2c; /* Darker gray muted color */
+    --muted-foreground: #a4a4a4; /* Light gray muted foreground */
+
+    /* Accent color scheme for dark mode */
+    --accent: #2c2c2c; /* Darker gray accent color */
+    --accent-foreground: #f0f8ff; /* Alice blue accent foreground */
+
+    /* Destructive color scheme for dark mode */
+    --destructive: #4d1919; /* Dark red destructive color */
+    --destructive-foreground: #f0f8ff; /* Alice blue destructive foreground */
+
+    /* Border and input colors for dark mode */
+    --border: #2c2c2c; /* Darker gray border */
+    --input: #2c2c2c; /* Darker gray input background */
+    --ring: #36454f; /* Charcoal gray ring (focus border) */
+
+    /* Text and soft text colors for dark mode */
+    --text-color: #ffffff; /* White text color */
+    --soft-text-color: #b3b3b3; /* Light gray soft text color */
+  }
+}
+
+* {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-poppins);
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.filter-grey {
+  filter: brightness(0) saturate(100%) invert(47%) sepia(0%) saturate(217%)
+    hue-rotate(32deg) brightness(98%) contrast(92%);
+}
+
+/* ========================================== REACT-QUILL STYLES */
+.ql-editor {
+  font-family: var(--font-poppins);
+  height: 100px;
+  font-size: 18px;
+}
+
+/* ========================================== TAILWIND STYLES */
+@layer utilities {
+  /* Container utility */
+  .wrapper {
+    @apply w-full p-5 px-5 max-w-screen-2xl lg:mx-auto md:mx-auto md:px-10 bg-slate-100;
+  }
+
+  /* Flexbox utilities */
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+
+  /* TYPOGRAPHY */
+
+  .bold{
+    @apply ;
+  }
+  /* Heading 1, bold style */
+  .h1-bold {
+    @apply font-bold text-[38px] leading-[48px] lg:text-[48px] lg:leading-[60px] xl:text-[58px] xl:leading-[74px];
+  }
+
+  /* Heading 2, bold style */
+  .h2-bold {
+    @apply font-bold text-[32px] leading-[40px] lg:text-[36px] lg:leading-[44px] xl:text-[40px] xl:leading-[48px];
+  }
+
+  /* Heading 2, medium style */
+  .h2-medium {
+    @apply font-medium text-[32px] leading-[40px] lg:text-[36px] lg:leading-[44px] xl:text-[40px] xl:leading-[48px];
+  }
+
+  /* Heading 3, bold style */
+  .h3-bold {
+    @apply font-bold text-[28px] leading-[36px] md:text-[36px] md:leading-[44px];
+  }
+
+  /* Heading 3, medium style */
+  .h3-medium {
+    @apply font-medium text-[28px] leading-[36px] md:text-[36px] md:leading-[44px];
+  }
+
+  /* Heading 4, medium style */
+  .h4-medium {
+    @apply font-medium text-[32px] leading-[40px];
+  }
+
+  /* Heading 5, bold style */
+  .h5-bold {
+    @apply font-bold text-[28px] leading-[36px];
+  }
+
+  /* Heading 5, medium style */
+  .h5-medium {
+    @apply font-medium text-[24px] leading-[32px];
+  }
+
+  /* Paragraph, bold, 24px */
+  .p-bold-24 {
+    @apply font-bold text-[24px] leading-[36px];
+  }
+
+  /* Paragraph, medium, 24px */
+  .p-medium-24 {
+    @apply font-medium text-[24px] leading-[36px];
+  }
+
+  /* Paragraph, regular, 24px */
+  .p-regular-24 {
+    @apply font-normal text-[24px] leading-[36px];
+  }
+
+  /* Paragraph, bold, 20px */
+  .p-bold-20 {
+    @apply font-bold text-[20px] leading-[30px] tracking-[2%];
+  }
+
+  /* Paragraph, semibold, 20px */
+  .p-semibold-20 {
+    @apply text-[20px] font-semibold leading-[30px] tracking-[2%];
+  }
+
+  /* Paragraph, medium, 20px */
+  .p-medium-20 {
+    @apply text-[20px] font-medium leading-[30px];
+  }
+
+  /* Paragraph, regular, 20px */
+  .p-regular-20 {
+    @apply text-[20px] font-normal leading-[30px] tracking-[2%];
+  }
+
+  /* Paragraph, semibold, 18px */
+  .p-semibold-18 {
+    @apply text-[18px] font-semibold leading-[28px] tracking-[2%];
+  }
+
+  /* Paragraph, medium, 18px */
+  .p-medium-18 {
+    @apply text-[18px] font-medium leading-[28px];
+  }
+
+  /* Paragraph, regular, 18px */
+  .p-regular-18 {
+    @apply text-[18px] font-normal leading-[28px] tracking-[2%];
+  }
+
+  /* Paragraph, bold, 16px */
+  .p-bold-16 {
+    @apply text-[16px] font-bold leading-[24px];
+  }
+
+  /* Paragraph, medium, 16px */
+  .p-medium-16 {
+    @apply text-[16px] font-medium leading-[24px];
+  }
+
+  /* Paragraph, regular, 16px */
+  .p-regular-16 {
+    @apply text-[16px] font-normal leading-[24px];
+  }
+
+  /* Paragraph, semibold, 14px */
+  .p-semibold-14 {
+    @apply text-[14px] font-semibold leading-[20px];
+  }
+
+  /* Paragraph, medium, 14px */
+  .p-medium-14 {
+    @apply text-[14px] font-medium leading-[20px];
+  }
+
+  /* Paragraph, regular, 14px */
+  .p-regular-14 {
+    @apply text-[14px] font-normal leading-[20px];
+  }
+
+  /* Paragraph, medium, 12px */
+  .p-medium-12 {
+    @apply text-[12px] font-medium leading-[20px];
+  }
+
+}
